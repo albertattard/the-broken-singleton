@@ -26,15 +26,9 @@ The aim of this article is to highlight the impact of such transformations have 
 
 While this has little, if any, impact to single threaded programs, such transformations have a great impact on multithreaded programs.  In fact the Java Memory Model is always discussed within a multithreaded context.  To make things worse, simple operations, such as creating a new instance of an object, may result in a number of CPU instructions.
 
-|Source Code|CPU Instructions|
-|-----------|----------------|
-|```java
-Object x = new Object();
-```|```
-Allocate space for new object
-Store the unconstructed object in variable
-Initialise object
-```|
+|Source Code               |CPU Instructions |
+|--------------------------|-----------------|
+|`Object x = new Object();`|Allocate space for new object, Store the unconstructed object in variable and Initialise object|
 
 In the above table we saw how one single line of code translates to several lines of CPU instructions.  **Please note that the above CPU instructions may be incorrect and these are there just for illustration purposes**.
 
