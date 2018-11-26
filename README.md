@@ -38,7 +38,7 @@ This section briefly introduced the Java Memory Model and provided two simple ex
 
 The Singleton is a design pattern where, at most, only one instance of a given object is created.  In other words, this design pattern restricts the number of instances created of a certain class to one.  This is quite useful when you need to coordinate things through a single service.  Say we have a sequence generator (such as an ID generator), and this sequence generator is used by several other classes throughout the application to generate unique values, similar to an auto-increment column in a database table.  It is imperative that the created values are unique as otherwise we may have duplicate ids and compromise the application integrity.
 
-``java
+```java
 package com.javacreed.examples.concurrency.part1;
 
 public class SequenceGenerator {
@@ -193,7 +193,7 @@ public class BrokenSequenceGeneratorTest {
           final BrokenSequenceGenerator sequenceGenerator = BrokenSequenceGenerator.getInstance();
           final long value = sequenceGenerator.getNextValue();
 
-          <span class="comments">// Synchronise the access as the collections used are not thread-safe</span>
+          /* Synchronise the access as the collections used are not thread-safe */
           synchronized (BrokenSequenceGeneratorTest.class) {
             if (!generatedValues.add(value)) {
               exception.compareAndSet(null, new AssertionFailedError("Duplicate value " + value));
