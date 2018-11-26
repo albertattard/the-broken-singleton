@@ -28,7 +28,7 @@ While this has little, if any, impact to single threaded programs, such transfor
 
 |Source Code               |CPU Instructions |
 |--------------------------|-----------------|
-|`Object x = new Object();`|Allocate space for new object  Store the unconstructed object in variable  Initialise object|
+|`Object x = new Object();`|Allocate space for new object<br />Store the unconstructed object in variable<br />Initialise object|
 
 In the above table we saw how one single line of code translates to several lines of CPU instructions.  **Please note that the above CPU instructions may be incorrect and these are there just for illustration purposes**.
 
